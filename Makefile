@@ -1,8 +1,10 @@
-PROJ_NAME = project
+PROJ_NAME ?= project
 CC = clang
-LIBS =
+INCLUDE_PATHS ?=
+LINK_PATHS ?=
+LIBS ?=
 # -pg -mfentry
-CFLAGS = -std=gnu11 -march=x86-64 -msse3 \
+CFLAGS += -std=gnu11 -march=x86-64 -msse3 \
 -Werror -Wall -Wextra -Wpedantic -Wconversion \
 -Wno-unused-parameter -Wno-missing-braces -Wno-missing-field-initializers -Wno-format \
 -Wno-newline-eof -Wno-language-extension-token -Wno-gnu-zero-variadic-macro-arguments \
