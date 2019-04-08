@@ -25,6 +25,7 @@ endif
 
 OUTPUT_FOLDER = bin
 ifdef LIB
+INCLUDE_PATHS += -Iinclude
 ifndef UNIT_TEST
 OUTPUT_FOLDER = lib
 PROJ_NAME := $(PROJ_NAME).a
