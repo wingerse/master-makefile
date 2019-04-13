@@ -28,14 +28,14 @@ ifdef LIB
 INCLUDE_PATHS += -Iinclude
 ifndef UNIT_TEST
 OUTPUT_FOLDER = lib
-PROJ_NAME := $(PROJ_NAME).a
+TARGET_NAME := $(PROJ_NAME).a
 endif
 endif
 
 src = $(shell find src -name '*.c' -type f | paste -s -)
 res = $(shell find res -name '*' -type f 2> /dev/null | paste -s -)
 
-TARGET = $(OUTPUT_FOLDER)/$(BUILD_FOLDER)/$(PROJ_NAME)
+TARGET = $(OUTPUT_FOLDER)/$(BUILD_FOLDER)/$(TARGET_NAME)
 $(shell mkdir -p $(OUTPUT_FOLDER)/$(BUILD_FOLDER))
 
 obj = $(patsubst src/%.c,obj/$(BUILD_FOLDER)/%.o,$(src))
@@ -65,10 +65,10 @@ run: main
 
 install:
 ifdef LIB
-	cp -n lib/release/$(PROJ_NAME) /usr/local/lib/$(PROJ_NAME)
+	cp -n lib/release/$(TARGET_NAME) /usr/local/lib/$(TARGET_NAME)
 	cp -rn include/$(PROJ_NAME)/ /usr/local/include/$(PROJ_NAME)
 else
-	cp -n bin/release/$(PROJ_NAME) /usr/local/bin/$(PROJ_NAME)
+	cp -n bin/release/$(TARGET_NAME) /usr/local/bin/$(TARGET_NAME)
 endif
 
 .PHONY: clean
