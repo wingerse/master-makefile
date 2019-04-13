@@ -65,10 +65,10 @@ run: main
 
 install:
 ifdef LIB
-	cp lib/release/$(PROJ_NAME) /usr/local/lib/$(PROJ_NAME)
-	cp -r include/$(PROJ_NAME)/ /usr/local/include/$(PROJ_NAME)
+	cp -n lib/release/$(PROJ_NAME) /usr/local/lib/$(PROJ_NAME)
+	cp -rn include/$(PROJ_NAME)/ /usr/local/include/$(PROJ_NAME)
 else
-	cp bin/release/$(PROJ_NAME) /usr/local/bin/$(PROJ_NAME)
+	cp -n bin/release/$(PROJ_NAME) /usr/local/bin/$(PROJ_NAME)
 endif
 
 .PHONY: clean
