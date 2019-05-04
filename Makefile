@@ -1,4 +1,5 @@
 PROJ_NAME ?= project
+TARGET_NAME := $(PROJ_NAME)
 CC = clang
 INCLUDE_PATHS ?=
 LINK_PATHS ?=
