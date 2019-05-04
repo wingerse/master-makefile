@@ -71,6 +71,19 @@ else
 	cp -n bin/release/$(TARGET_NAME) /usr/local/bin/$(TARGET_NAME)
 endif
 
+uninstall:
+ifdef LIB
+	rm  /usr/local/lib/$(TARGET_NAME)
+	rm -r /usr/local/include/$(PROJ_NAME)
+else
+	rm /usr/local/bin/$(TARGET_NAME)
+endif
+
+
+.PHONY: main
+.PHONY: run
+.PHONY: install
+.PHONY: uninstall
 .PHONY: clean
 .PHONY: clean-debug
 .PHONY: clean-release
