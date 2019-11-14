@@ -1,15 +1,13 @@
 PROJ_NAME ?= project
 TARGET_NAME := $(PROJ_NAME)
-CC = clang
+CC = gcc
 INCLUDE_PATHS ?=
 LINK_PATHS ?=
 LIBS ?=
 # -pg -mfentry
 CFLAGS += -std=gnu11 -march=x86-64 -msse3 \
--Werror -Wall -Wextra -Wpedantic -Wconversion \
--Wno-unused-parameter -Wno-missing-braces -Wno-missing-field-initializers -Wno-format \
--Wno-newline-eof -Wno-language-extension-token -Wno-gnu-zero-variadic-macro-arguments \
--Wno-gnu-empty-struct -Wno-error=unused-function
+-Werror -Wall -Wextra -Wconversion \
+-Wno-unused-parameter -Wno-newline-eof -Wno-error=unused-function
 
 ifdef RELEASE
 CFLAGS += -O2 -DNDEBUG
