@@ -7,7 +7,7 @@ LIBS ?=
 # -pg -mfentry
 CFLAGS += -std=gnu11 -march=x86-64 -msse3 \
 -Werror -Wall -Wextra -Wconversion \
-Wno-unused-parameter -Wno-error=unused-function
+-Wno-unused-parameter -Wno-error=unused-function
 
 ifdef RELEASE
 CFLAGS += -O2 -DNDEBUG
